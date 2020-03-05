@@ -184,45 +184,42 @@ Vue.component('app-form', {
                     <form>
                     <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Primeiro Nome *</label>
-                        <input type="text" class="form-control" id="inputnome1">
+                        <label for="inputPriNome">Primeiro Nome *</label>
+                        <input type="text" class="form-control" id="inputPriNome">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Segundo Nome *</label>
-                        <input type="text" class="form-control" id="inputnome2">
+                        <label for="inputSegNone">Segundo Nome *</label>
+                        <input type="text" class="form-control" id="inputSegNone">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email *</label>
+                        <label for="inputEmail">Email *</label>
                         <input type="email" class="form-control" id="inputEmail">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Telefone *</label>
-                        <input type="text" class="form-control" id="inputFone">
+                        <label for="inputTelefone">Telefone *</label>
+                        <input type="text" class="form-control" id="inputTelefone">
                     </div>
                     </div>
                     <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">Cidade</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <label for="inputCidade">Cidade</label>
+                        <input type="text" class="form-control" id="inputCidade">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputState">Estado</label>
-                        <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
+                        <label for="inputEstado">Estado</label>
+                        <select id="inputEstado" class="form-control">
+                        <option selected>Estado...</option>
+                        <option>Ceará</option>
                         </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputZip">CEP</label>
-                        <input type="text" class="form-control" id="inputZip">
+                        <label for="inputCep">CEP</label>
+                        <input type="text" class="form-control" id="inputCep">
                     </div>
                     </div>
                     <div class="mb-3">
-                        <label for="validationTextarea">Breve descrição</label>
-                        <textarea class="form-control" id="validationTextarea" placeholder="Escreva aqui..." required></textarea>
-                        <div class="invalid-feedback">
-                        Please enter a message in the textarea.
-                        </div>
+                        <label for="textarea">Breve descrição</label>
+                        <textarea class="form-control" id="textarea" placeholder="Escreva aqui..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Aplicar</button>
                 </form>

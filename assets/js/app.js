@@ -171,57 +171,74 @@ Vue.component('app-vaga', {
 Vue.component('app-form', {
     data: function () {
       return {
-        formtitle: 'Aplicar Agora'
+        formtitle: 'Aplicar Agora',
+        nomeum: '',
+        nomedois: '',
+        email: '',
+        fone: '',
+        cidade: '',
+        estado: '',
+        cep: '',
+        descricao: ''
       }
     },
+    methods:{
+    aplicar: function (e) {
+      if(!this.nomeum){
+        alert('Campo Primeiro Nome é Obrigatório!')
+      }
+      e.preventDefault();
+    }
+  },
     template: `
     <div>
     <!-- Services Section -->
     <section class="page-section" id="aplicar" style="background-color: #eee">
             <div class="container">
                 <h2 class="text-center mt-0">{{ formtitle }}</h2>
+                
                 <hr class="divider my-4">
-                    <form>
+                    <form action="#">
                     <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputPriNome">Primeiro Nome *</label>
-                        <input type="text" class="form-control" id="inputPriNome">
+                        <label for="nomeum">Primeiro Nome *</label>
+                        <input type="text" class="form-control" id="nomeum" v-model="nomeum" name="nomeum">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputSegNone">Segundo Nome *</label>
-                        <input type="text" class="form-control" id="inputSegNone">
+                        <label for="nomedois">Segundo Nome *</label>
+                        <input type="text" class="form-control" id="nomedois" v-model="nomedois" name="nomedois">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputEmail">Email *</label>
-                        <input type="email" class="form-control" id="inputEmail">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email" v-model="email" name="email">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputTelefone">Telefone *</label>
-                        <input type="text" class="form-control" id="inputTelefone">
+                        <label for="fone">Telefone *</label>
+                        <input type="text" class="form-control" id="fone" v-model="fone" name="fone">
                     </div>
                     </div>
                     <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCidade">Cidade</label>
-                        <input type="text" class="form-control" id="inputCidade">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" v-model="cidade" name="cidade">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputEstado">Estado</label>
-                        <select id="inputEstado" class="form-control">
+                        <label for="estado">Estado</label>
+                        <select id="estado" v-model="estado" name="estado" class="form-control">
                         <option selected>Estado...</option>
                         <option>Ceará</option>
                         </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputCep">CEP</label>
-                        <input type="text" class="form-control" id="inputCep">
+                        <label for="cep">CEP</label>
+                        <input type="text" class="form-control" id="cep" v-model="cep" name="cep">
                     </div>
                     </div>
                     <div class="mb-3">
-                        <label for="textarea">Breve descrição</label>
-                        <textarea class="form-control" id="textarea" placeholder="Escreva aqui..."></textarea>
+                        <label for="descricao">Breve descrição</label>
+                        <textarea class="form-control" id="descricao" name="descricao" placeholder="Escreva aqui..." v-model="descricao"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Aplicar</button>
+                    <button type="submit" v-on:click="aplicar" class="btn btn-primary">Aplicar</button>
                 </form>
         </div>
     </section>
